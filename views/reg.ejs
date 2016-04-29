@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title><%= title %></title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/template_mo.css" rel="stylesheet" type="text/css">
+    <link rel="Shortcut Icon" href="favicon.ico" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="templatemo-bg-image-2">
+<div class="container" >
+    <div class="row clearfix">
+        <!--前半部分-->
+        <div class="col-md-3 column">
+        </div>
+
+        <!--注册部分-->
+        <div class="col-md-6 column">
+
+            <h1 class="margin-bottom-30">用户注册</h1>
+            <div class="col-md-12">
+                <form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="#" method="post">
+                    <div class="form-inner">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label for="username" class="control-label">用户名</label>
+                                <input type="text" class="form-control" id="username" placeholder="username">
+                            </div>
+                            <div class="col-md-6 templatemo-radio-group">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> 男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> 女
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label for="email" class="control-label">邮箱</label>
+                                <input type="email" class="form-control" id="email" placeholder="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label for="password" class="control-label">密码</label>
+                                <input type="password" class="form-control" id="password" placeholder="password">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="password" class="control-label">密码确认</label>
+                                <input type="password" class="form-control" id="password_confirm" placeholder="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="点击注册" class="btn btn-info">
+                                <a href="/login" class="pull-right">已有密码，直接登录</a>
+                            </div>
+                        </div>
+                </form>
+        </div>
+
+
+        <!--后半部分-->
+        <div class="col-md-3 column">
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
