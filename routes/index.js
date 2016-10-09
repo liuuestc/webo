@@ -7,16 +7,21 @@ router.get('/', function(req, res, next) {
   res.render('index',{title:'starFarming'});
 });
 
-router.get('/reg',function (req,res) {
-  res.render('reg',{title:'注册!'});
+//查找文章
+router.post('/search',function (req,res) {
+  console.log(req.body);
+  res.send("你查找的是"+req.param('searchArticle'));
 });
 
-router.get('/login',function (req,res) {
-  res.render("login",{title:'登录!'});
+//测试ajax接口
+router.get('/ajax',function (req,res) {
+  res.render('testajax');
 });
 
-router.get('/forgetPass',function (req,res) {
-  res.render("forgetPassword",{title:"忘记密码"})
+router.get('/json',function(req,res){
+  res.send({status:'json'});
 });
-
+router.get('/jsonp',function (req,res) {
+  res.jsonp({status:'jsonp'});
+});
 module.exports = router;

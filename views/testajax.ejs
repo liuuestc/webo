@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function get_jsonp() {
+                $.getJSON("http://localhost:3000/jsonp",
+                function(data) {
+                    $('#rjsonp').val('Jsonp info : ' + data.status);
+                });
+            }
+
+            function get_json(){
+                $.getJSON("/json",
+                    function(data) {
+                        $('#rjson').val('Json info : ' + data.status);
+                    });
+            }
+        </script>
+
+        <a href="javascript:get_jsonp();">Click me for jsonp</a><br />
+        <textarea id="rjsonp" cols="50" rows="3"></textarea>
+        <br />
+        <a href="javascript:get_json();">Click me for jsonp</a><br />
+        <textarea id="rjson" cols="50" rows="3"></textarea>
+    </body>
+</html>

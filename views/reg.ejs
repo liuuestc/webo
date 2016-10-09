@@ -8,8 +8,8 @@
     <title><%= title %></title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/template_mo.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/template_mo.css" rel="stylesheet" type="text/css">
     <link rel="Shortcut Icon" href="favicon.ico" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,6 +19,7 @@
     <![endif]-->
 </head>
 <body class="templatemo-bg-image-2">
+
 <div class="container" >
     <div class="row clearfix">
         <!--前半部分-->
@@ -27,15 +28,14 @@
 
         <!--注册部分-->
         <div class="col-md-6 column">
-
             <h1 class="margin-bottom-30">用户注册</h1>
             <div class="col-md-12">
-                <form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="/reg" method="post">
+                <form class="form-horizontal templatemo-create-account templatemo-container" role="form"  method="post">
                     <div class="form-inner">
                         <div class="form-group">
                             <div class="col-md-6">
                                 <label for="username" class="control-label">用户名</label>
-                                <input type="text" class="form-control" id="username" placeholder="username">
+                                <input type="text" name="username" class="form-control"  id="username" placeholder="username">
                             </div>
                             <div class="col-md-6 templatemo-radio-group">
                                 <label class="radio-inline">
@@ -50,40 +50,40 @@
                         <div class="form-group">
                             <div class="col-md-12">
                                 <label for="email" class="control-label">邮箱</label>
-                                <input type="email" class="form-control" id="email" placeholder="email">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="email">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6">
                                 <label for="password" class="control-label">密码</label>
-                                <input type="password" class="form-control" id="password" placeholder="password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="password">
                             </div>
                             <div class="col-md-6">
                                 <label for="password" class="control-label">密码确认</label>
-                                <input type="password" class="form-control" id="password_confirm" placeholder="password">
+                                <input type="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="password">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-12">
                                 <input type="submit" value="点击注册" class="btn btn-info">
-                                <a href="/login" class="pull-right">已有密码，直接登录</a>
+                                <a href="/users/login" class="pull-right">已有密码，直接登录</a>
                             </div>
                         </div>
+                    </div>
                 </form>
-        </div>
-
-
+            </div>
         <!--后半部分-->
         <div class="col-md-3 column">
         </div>
     </div>
 </div>
-
+</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap.min.js"></script>
+
 </body>
 </html>

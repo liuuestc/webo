@@ -1,0 +1,135 @@
+<!--这是发表文章的界面-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script charset="utf-8" src="/js/jQuery.js"></script>
+    <script charset="utf-8" src="/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="UTF-8" src="/kindeditor/lang/zh-CN.js"></script>
+    <script>
+      KindEditor.ready(function (K) {
+        window.editor = K.create('#thecontent')
+      });
+    </script>
+      <script charset="utf-8" src="/javascripts/myjs/ProcessArticle.js"></script>
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+    <!-- Bootstrap -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/template_mo.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body background="/images/bg1.jpg">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-md-12 column">
+          <!--导航条-->
+          <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">starFarming社区</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active">
+                  <a href="#"><%= title %>的精品文章</a>
+                </li>
+                <li>
+                  <a href="#"><%= title %>的留言版</a>
+                </li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="/users/login">我的好友</a>
+                </li>
+                <li>
+                  <a href="/article/new">发表博文</a>
+                </li>
+                <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input class="form-control" type="text" placeholder="input"/>
+                  </div> <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+              </ul>
+            </div>
+          </nav>
+          <!--主要部分-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-8">
+
+                    <form role="form" id="article" action="" method="post">
+                      <div class="form-group">
+                        <label for="title">
+                          <h4>编辑文章名字</h4>
+                        </label>
+                        <br/>
+                        <input class="form-control" id="title" name="title" type="text" />
+                      </div>
+                      <div class="form-group">
+                        <label for="thecontent">
+                            <h4><strong>编辑文章正文</strong></h4>
+                        </label>
+                        <textarea class="form-control" name="thecontent" id="thecontent" rows="30"></textarea>
+                      </div>
+                      <button type="submit" id="confirm"  class="btn btn-success" onclick="confirmArticle()">
+                        确认发表
+                      </button>
+                      <button type="submit" id="cancel"  class="btn btn-danger" onclick="cancelArticle()">
+                        放弃发表
+                      </button>
+                      <button type="submit" id="delay"  class="btn btn-info" onclick="delayArticle()">
+                        收藏到草稿箱
+                      </button>
+                    </form>
+                  </div>
+
+                  <!-- 左侧兰 -->
+                  <div class="col-md-3 col-md-offset-1">
+                    <!-- 右侧栏-->
+                      <div class="thumbnail">
+                        <img alt="200x150" src="/beauty.jpg" class="img-rounded" />
+                        <div class="caption">
+                          <h3 class="text-left">
+                            本人信息
+                          </h3>
+                          <p name="personInfo">
+                            Dras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                          </p>
+                        </div>
+                      </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">
+                          博主最火博文
+                        </h3>
+                      </div>
+                      <div class="panel-body">
+                        <a href="#" name="hotTitle">朱熹读书法</a>
+                      </div>
+                      <div class="panel-footer">
+                        Panel footer
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end 左侧兰 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- end 主体12-->
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <script charset="utf-8" src="/js/jQuery.js"></script>
+    <script charset="utf-8" src="/javascripts/myjs/ProcessArticle.js"></script>
     <title><%= title %></title>
     <link rel="Shortcut Icon" href="favicon.ico" />
     <!-- Bootstrap -->
@@ -30,19 +32,19 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="#">精品文章</a>
+                            <a href="#"><%= title %>的精品文章</a>
                         </li>
                         <li>
-                            <a href="#">留言版</a>
+                            <a href="#"><%= title %>的留言版</a>
                         </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">登录</a>
+                            <a href="/users/login">我的好友</a>
                         </li>
                         <li>
-                            <a href="#">注册</a>
+                            <a href="/article/new">发表博文</a>
                         </li>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
@@ -55,7 +57,7 @@
             <!--引用-->
             <blockquote>
                 <p>
-                    物有本末 事有终始 知所先后 则近道矣
+                    物有本末 事有终始 知所先后 则近道矣        <!--自己编辑的格言条-->
                 </p> <small> <cite>《大学》</cite></small>
             </blockquote>
             <!--主要部分-->
@@ -65,7 +67,7 @@
                 <!-- 右侧栏-->
                 <div class="col-md-3 column ">
                     <div class="thumbnail">
-                        <img alt="300x200" src="beauty.jpg" class="img-rounded" />
+                        <img alt="300x200" src="/beauty.jpg" class="img-rounded" />
                         <div class="caption">
                             <h3>
                                 本人信息
@@ -79,135 +81,51 @@
                         </div>
                     </div>
                 </div>
+
+
                 <!--最近文章-->
                 <div class="col-md-8 col-md-offset-1 column">
-                    <!--内容展示-->
-                    <div class="list-group">
-                        <a href="#" class="list-group-item active">最近博文</a>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                Article 2
-                            </h4>
-                            <p class="list-group-item-text">
-                                this is the first word!
-                            </p>
-                        </div>
-                        <div class="list-group-item">
-                            <span class="badge">14</span> Article 3
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tabbable" id="tabs-41477">
+
+                                    <!--第一栏-->
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#panel-472832" id="getBlog" data-toggle="tab">已发博文</a>
+                                        </li>
+                                        <li>
+                                            <a href="#panel-72849" id="getDraft" data-toggle="tab">草稿箱</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="tab-content">
+
+                                        <div class="tab-pane active" id="panel-472832">
+                                            <!--内容展示-->
+                                            <div class="list-group" id="bloga">
+                                                <a href="#" class="list-group-item active">最近博文</a>
+                                                <div id="blogTitle">
+                                                    <%- returnTitle%>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="panel-72849">
+                                            <div class="list-group" >
+                                                <a href="#" class="list-group-item active">未发表</a>
+                                                <div id="draftTitle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 分页-->
+                                    <ul class="pagination" id="pagination">
+                                        <%- pageSplit%>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- 分页-->
-                    <ul class="pagination">
-                        <li>
-                            <a href="#">Prev</a>
-                        </li>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li>
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#">4</a>
-                        </li>
-                        <li>
-                            <a href="#">5</a>
-                        </li>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li>
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#">4</a>
-                        </li>
-                        <li>
-                            <a href="#">5</a>
-                        </li>
-                        <li>
-                            <a href="#">Next</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
